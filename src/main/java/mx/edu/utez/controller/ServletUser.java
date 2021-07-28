@@ -12,7 +12,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ServletUser", value = "/ServletUser")
+@WebServlet(name = "ServletUser", urlPatterns = {"/readUsers", "/createUser", "/getUserById", "/updateUser", "/deleteUser"})
 public class ServletUser extends HttpServlet {
     Logger logger = LoggerFactory.getLogger(ServletUser.class);
 
@@ -27,7 +27,7 @@ public class ServletUser extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
 
-        switch (action) {
+        switch(action){
             case "create":
                 // do something
                 String name = request.getParameter("name") != null ? request.getParameter("name") : "";
@@ -42,7 +42,7 @@ public class ServletUser extends HttpServlet {
                 BeanPerson beanPerson = new BeanPerson(0, name, lastname, age);
                 BeanUser beanUser = new BeanUser(0, email, password, 0, beanPerson, beanRole);
 
-                if (new DaoUser().create(beanUser)) {
+                if(new DaoUser().create(beanUser)){
                     request.setAttribute("message", "Usuario registrado correctamente");
                 } else {
                     request.setAttribute("message", "Usuario no registrado");
@@ -72,7 +72,7 @@ public class ServletUser extends HttpServlet {
                 BeanPerson beanPerson1 = new BeanPerson(0, name1, lastname1, age1);
                 BeanUser beanUser1 = new BeanUser(id1, email1, password1, 0, beanPerson1, beanRole1);
 
-                if (new DaoUser().update(beanUser1)) {
+                if(new DaoUser().update(beanUser1)){
                     request.setAttribute("message", "Usuario modificado correctamente");
                 } else {
                     request.setAttribute("message", "Usuario no modificado");
@@ -81,14 +81,14 @@ public class ServletUser extends HttpServlet {
                 doGet(request, response);
                 break;
             case "delete":
-                //do something
-                long idDelete = Long.parseLong(request.getParameter("id"));
-                if(new DaoUser().delete(idDelete)){
+                // do something
+                long id2 = Long.parseLong(request.getParameter("id"));
+                if(new DaoUser().delete(id2)){
                     request.setAttribute("message", "Usuario eliminado correctamente");
                 } else {
                     request.setAttribute("message", "Usuario no eliminado");
                 }
-                doGet(request,response);
+                doGet(request, response);
                 break;
             default:
                 // no supported

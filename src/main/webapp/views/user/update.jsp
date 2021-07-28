@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="context" value="${pageContext.request.contextPath}"/>
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <html>
 <head>
     <title>Modificar Usuario | Tiendita</title>
@@ -16,23 +16,23 @@
 </head>
 <body>
 <h1>Modificar Usuario</h1>
-<form action="${context}/ServletUser" method="POST">
+<form action="${context}/updateUser" method="POST">
     <input type="hidden" value="update" name="action">
     <input type="hidden" value="${ user.id }" name="id">
     <label>Nombre(s):</label>
-    <input class="form-control" type="text" name="name" value="${ user.idPerson.name }"/>
+    <input class="form-control" type="text" name="name" value="${ user.idPerson.name }" />
     <br>
     <label>Apellido(s):</label>
-    <input class="form-control" type="text" name="lastname" value="${ user.idPerson.lastname }"/>
+    <input class="form-control" type="text" name="lastname" value="${ user.idPerson.lastname }" />
     <br>
     <label>Edad:</label>
-    <input class="form-control" type="number" name="age" value="${ user.idPerson.edad }"/>
+    <input class="form-control" type="number" name="age" value="${ user.idPerson.edad }" />
     <br>
     <label>Correo:</label>
-    <input class="form-control" type="email" name="email" value="${ user.email }"/>
+    <input class="form-control" type="email" name="email" value="${ user.email }" />
     <br>
     <label>Contraseña:</label>
-    <input class="form-control" type="password" name="password" value="${ user.password }"/>
+    <input class="form-control" type="password" name="password" value="${ user.password }" />
     <br>
     <label>Rol:</label>
     <select class="form-select" name="role">
@@ -45,7 +45,6 @@
 </form>
 
 <script src="${context}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </body>
 </html>

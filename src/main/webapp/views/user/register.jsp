@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="context" value="${pageContext.request.contextPath}"/>
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <html>
 <head>
     <title>Registrar Usuario | Tiendita</title>
@@ -16,22 +16,22 @@
 </head>
 <body>
 <h1>Registrar Usuario</h1>
-<form action="${context}/ServletUser" method="POST">
+<form action="${context}/createUser" method="POST">
     <input type="hidden" value="create" name="action">
     <label>Nombre(s):</label>
-    <input class="form-control" type="text" name="name"/>
+    <input class="form-control" type="text" name="name" />
     <br>
     <label>Apellido(s):</label>
-    <input class="form-control" type="text" name="lastname"/>
+    <input class="form-control" type="text" name="lastname" />
     <br>
     <label>Edad:</label>
-    <input class="form-control" type="number" name="age"/>
+    <input class="form-control" type="number" name="age" />
     <br>
     <label>Correo:</label>
-    <input class="form-control" type="email" name="email"/>
+    <input class="form-control" type="email" name="email" />
     <br>
     <label>Contraseña:</label>
-    <input class="form-control" type="password" name="password"/>
+    <input class="form-control" type="password" name="password" />
     <br>
     <label>Rol:</label>
     <select class="form-select" name="role">
@@ -44,7 +44,6 @@
 </form>
 
 <script src="${context}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </body>
 </html>
