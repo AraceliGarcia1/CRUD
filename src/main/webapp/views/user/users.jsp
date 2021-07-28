@@ -71,7 +71,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label>¿Deshabilitar?</label>
+                    <label>¿Seguro de eliminar este usuario?</label>
                     <h5 id="text-delete"></h5>
                 </div>
                 <div class="modal-footer">
